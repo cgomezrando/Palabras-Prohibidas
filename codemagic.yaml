@@ -8,7 +8,7 @@ workflows:
       groups:
         - ios_signing_keys
       vars:
-        BUNDLE_ID: com.carlos.PalabrasProhibidas
+        BUNDLE_ID: com.cgr.PalabrasProhibidas
         P12_PASSWORD: TempBuildPass123
       flutter: 3.32.0
       xcode: latest
