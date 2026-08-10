@@ -8,7 +8,7 @@ import '/index.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'word_screen_widget.dart' show WordScreenWidget;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:provider/provider.dart';
@@ -16,10 +16,8 @@ import 'package:provider/provider.dart';
 class WordScreenModel extends FlutterFlowModel<WordScreenWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Custom Action - getWinnerName] action in Results widget.
+  // Stores action output result for [Custom Action - getWinnerName] action in Container widget.
   String? winner;
-  // Stores action output result for [Custom Action - getNextPlayer] action in Column widget.
-  int? nextPlayer;
   // State field(s) for PlayTimer widget.
   final playTimerInitialTimeMs = 60000;
   int playTimerMilliseconds = 60000;

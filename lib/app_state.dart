@@ -35,7 +35,7 @@ class FFAppState extends ChangeNotifier {
     _currentTeam = value;
   }
 
-  int _TeamCount = 2;
+  int _TeamCount = 0;
   int get TeamCount => _TeamCount;
   set TeamCount(int value) {
     _TeamCount = value;
@@ -166,7 +166,7 @@ class FFAppState extends ChangeNotifier {
     _PreviewTime = value;
   }
 
-  String _turnPhase = 'waiting';
+  String _turnPhase = '\"waiting\"';
   String get turnPhase => _turnPhase;
   set turnPhase(String value) {
     _turnPhase = value;

@@ -47,7 +47,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context) => Container(
                 color: Colors.transparent,
                 child: Image.asset(
-                  'assets/images/Palabras_Prohibidas.png',
+                  'assets/images/Icono.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -62,7 +62,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   builder: (context) => Container(
                     color: Colors.transparent,
                     child: Image.asset(
-                      'assets/images/Palabras_Prohibidas.png',
+                      'assets/images/Icono.png',
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -75,11 +75,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomeScreenWidget(),
         ),
         FFRoute(
-          name: GameRulesWidget.routeName,
-          path: GameRulesWidget.routePath,
-          builder: (context, params) => GameRulesWidget(),
-        ),
-        FFRoute(
           name: PlayerSetupWidget.routeName,
           path: PlayerSetupWidget.routePath,
           builder: (context, params) => PlayerSetupWidget(),
@@ -88,11 +83,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: WordScreenWidget.routeName,
           path: WordScreenWidget.routePath,
           builder: (context, params) => WordScreenWidget(),
-        ),
-        FFRoute(
-          name: ResultsScreenWidget.routeName,
-          path: ResultsScreenWidget.routePath,
-          builder: (context, params) => ResultsScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
