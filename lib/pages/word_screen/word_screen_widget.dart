@@ -122,17 +122,37 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                         .transparent,
                                   ),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'TURNO ${FFAppState().CurrentTurn.toString()} DE ${FFAppState().TotalTurns.toString()}',
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            font: GoogleFonts.poppins(
+                                child: Visibility(
+                                  visible: !((FFAppState().turnPhase ==
+                                          '\"waiting\"') &&
+                                      (FFAppState().CurrentTurn >
+                                          FFAppState().TotalTurns)),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        'TURNO ${FFAppState().CurrentTurn.toString()} DE ${FFAppState().TotalTurns.toString()}',
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .onPrimary,
+                                              fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -141,64 +161,56 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .fontStyle,
+                                              lineHeight: 1.4,
                                             ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .onPrimary,
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium
-                                                    .fontStyle,
-                                            lineHeight: 1.4,
-                                          ),
-                                    ),
-                                    Text(
-                                      valueOrDefault<String>(
-                                        () {
-                                          if (FFAppState().currentTeam == 1) {
-                                            return FFAppState().Team1Name;
-                                          } else if (FFAppState().currentTeam ==
-                                              2) {
-                                            return FFAppState().Team2Name;
-                                          } else if (FFAppState().currentTeam ==
-                                              3) {
-                                            return FFAppState().Team3Name;
-                                          } else if (FFAppState().currentTeam ==
-                                              4) {
-                                            return FFAppState().Team4Name;
-                                          } else {
-                                            return '';
-                                          }
-                                        }(),
-                                        'Team Name',
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleLarge
-                                          .override(
-                                            font: GoogleFonts.poppins(
+                                      Text(
+                                        valueOrDefault<String>(
+                                          () {
+                                            if (FFAppState().currentTeam == 1) {
+                                              return FFAppState().Team1Name;
+                                            } else if (FFAppState()
+                                                    .currentTeam ==
+                                                2) {
+                                              return FFAppState().Team2Name;
+                                            } else if (FFAppState()
+                                                    .currentTeam ==
+                                                3) {
+                                              return FFAppState().Team3Name;
+                                            } else if (FFAppState()
+                                                    .currentTeam ==
+                                                4) {
+                                              return FFAppState().Team4Name;
+                                            } else {
+                                              return '';
+                                            }
+                                          }(),
+                                          'Team Name',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleLarge
+                                            .override(
+                                              font: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.w800,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontStyle,
+                                              ),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .onPrimary,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w800,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleLarge
                                                       .fontStyle,
+                                              lineHeight: 1.3,
                                             ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .onPrimary,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w800,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleLarge
-                                                    .fontStyle,
-                                            lineHeight: 1.3,
-                                          ),
-                                    ),
-                                  ].divide(SizedBox(height: 16.0)),
+                                      ),
+                                    ].divide(SizedBox(height: 16.0)),
+                                  ),
                                 ),
                               ),
                             ),
@@ -209,6 +221,9 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                 width: 100.0,
                                 height: 120.0,
                                 decoration: BoxDecoration(
+                                  color: FFAppState().currentTeam == 1
+                                      ? Color(0xFF00E5FF)
+                                      : Colors.transparent,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(24.0),
                                     topRight: Radius.circular(24.0),
@@ -302,6 +317,9 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                 width: 100.0,
                                 height: 120.0,
                                 decoration: BoxDecoration(
+                                  color: FFAppState().currentTeam == 2
+                                      ? Color(0xFF00E5FF)
+                                      : Colors.transparent,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(24.0),
                                     topRight: Radius.circular(24.0),
@@ -396,6 +414,9 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                   width: 100.0,
                                   height: 120.0,
                                   decoration: BoxDecoration(
+                                    color: FFAppState().currentTeam == 3
+                                        ? Color(0xFF00E5FF)
+                                        : Colors.transparent,
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(24.0),
                                       topRight: Radius.circular(24.0),
@@ -493,6 +514,9 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                   width: 100.0,
                                   height: 120.0,
                                   decoration: BoxDecoration(
+                                    color: FFAppState().currentTeam == 4
+                                        ? Color(0xFF00E5FF)
+                                        : Colors.transparent,
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(24.0),
                                       topRight: Radius.circular(24.0),
