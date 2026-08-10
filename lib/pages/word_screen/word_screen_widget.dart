@@ -641,37 +641,39 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                   ),
                                 ),
                               ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  await actions.mostrarVentanaReglas(
-                                    context,
-                                  );
-                                },
-                                child: Container(
-                                  width: 75.0,
-                                  height: 75.0,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: Color(0xFF6D4CFF),
-                                      width: 2.0,
+                            if ((FFAppState().turnPhase == '\"preview\"') ||
+                                (FFAppState().turnPhase == '\"waiting\"'))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await actions.mostrarVentanaReglas(
+                                      context,
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 75.0,
+                                    height: 75.0,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: Color(0xFF6D4CFF),
+                                        width: 2.0,
+                                      ),
                                     ),
-                                  ),
-                                  child: Icon(
-                                    Icons.question_mark_sharp,
-                                    color: Colors.white,
-                                    size: 55.0,
+                                    child: Icon(
+                                      Icons.question_mark_sharp,
+                                      color: Colors.white,
+                                      size: 55.0,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
@@ -802,8 +804,8 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                           ),
                                         ),
                                         child: Container(
-                                          width: 150.0,
-                                          height: 200.0,
+                                          width: 200.0,
+                                          height: 250.0,
                                           decoration: BoxDecoration(
                                             boxShadow: [
                                               BoxShadow(
@@ -863,7 +865,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                         Icons
                                                             .check_circle_outline_sharp,
                                                         color: Colors.white,
-                                                        size: 85.0,
+                                                        size: 100.0,
                                                       ),
                                                       Padding(
                                                         padding:
@@ -891,6 +893,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                                 ),
                                                                 color: Colors
                                                                     .white,
+                                                                fontSize: 30.0,
                                                                 letterSpacing:
                                                                     0.0,
                                                                 fontWeight:
@@ -1020,10 +1023,9 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                             .center,
                                                     children: [
                                                       Icon(
-                                                        Icons
-                                                            .touch_app_outlined,
+                                                        Icons.style_outlined,
                                                         color: Colors.white,
-                                                        size: 55.0,
+                                                        size: 65.0,
                                                       ),
                                                       Text(
                                                         'REVELAR CARTA',
@@ -1297,8 +1299,8 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                         );
                                       },
                                       child: Container(
-                                        width: 150.0,
-                                        height: 200.0,
+                                        width: 200.0,
+                                        height: 250.0,
                                         decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
@@ -1340,7 +1342,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                             Icon(
                                               Icons.cancel_outlined,
                                               color: Colors.white,
-                                              size: 85.0,
+                                              size: 100.0,
                                             ),
                                             Align(
                                               alignment: AlignmentDirectional(
@@ -1366,6 +1368,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                                   .fontStyle,
                                                         ),
                                                         color: Colors.white,
+                                                        fontSize: 30.0,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,

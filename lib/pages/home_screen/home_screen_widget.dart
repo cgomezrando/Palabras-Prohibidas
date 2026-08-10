@@ -209,100 +209,78 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                     child: Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: InkWell(
-                        splashColor: Colors.transparent,
-                        focusColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                        onTap: () async {
-                          context.pushNamed(PlayerSetupWidget.routeName);
-                        },
-                        child: Container(
-                          width: 450.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 30.0,
-                                color: Colors.white,
-                                offset: Offset(
-                                  0.0,
-                                  2.0,
-                                ),
-                                spreadRadius: 0.0,
-                              )
-                            ],
-                            gradient: LinearGradient(
-                              colors: [Color(0xFF22105A), Color(0xFF111044)],
-                              stops: [0.0, 1.0],
-                              begin: AlignmentDirectional(1.0, 0.0),
-                              end: AlignmentDirectional(-1.0, 0),
-                            ),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(24.0),
-                              topRight: Radius.circular(24.0),
-                              bottomLeft: Radius.circular(24.0),
-                              bottomRight: Radius.circular(24.0),
-                            ),
-                            shape: BoxShape.rectangle,
-                            border: Border.all(
-                              color: Color(0xFF6D4CFF),
-                              width: 3.0,
-                            ),
+                      child: Container(
+                        width: 450.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 30.0,
+                              color: Colors.white,
+                              offset: Offset(
+                                0.0,
+                                2.0,
+                              ),
+                              spreadRadius: 0.0,
+                            )
+                          ],
+                          gradient: LinearGradient(
+                            colors: [Color(0xFF22105A), Color(0xFF111044)],
+                            stops: [0.0, 1.0],
+                            begin: AlignmentDirectional(1.0, 0.0),
+                            end: AlignmentDirectional(-1.0, 0),
                           ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 10.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Icon(
-                                      Icons.wifi_off,
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondary,
-                                      size: 50.0,
-                                    ),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(24.0),
+                            topRight: Radius.circular(24.0),
+                            bottomLeft: Radius.circular(24.0),
+                            bottomRight: Radius.circular(24.0),
+                          ),
+                          shape: BoxShape.rectangle,
+                          border: Border.all(
+                            color: Color(0xFF6D4CFF),
+                            width: 3.0,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Icon(
+                                    Icons.wifi_off,
+                                    color:
+                                        FlutterFlowTheme.of(context).secondary,
+                                    size: 50.0,
                                   ),
                                 ),
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Container(
-                                      width: 375.0,
-                                      height: 75.0,
-                                      decoration: BoxDecoration(),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 10.0, 0.0),
-                                        child: Text(
-                                          '100% Offline • Cientos de palabras divertidisimas para adivinar en familia o con amig@s!!',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color: Colors.white,
-                                                fontSize: 15.0,
-                                                letterSpacing: 0.0,
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 0.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 375.0,
+                                    height: 75.0,
+                                    decoration: BoxDecoration(),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 10.0, 0.0),
+                                      child: Text(
+                                        '100% Offline • Cientos de palabras divertidisimas para adivinar en familia o con amig@s!!',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.poppins(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -312,13 +290,24 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
                                                         .bodyMedium
                                                         .fontStyle,
                                               ),
-                                        ),
+                                              color: Colors.white,
+                                              fontSize: 15.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
