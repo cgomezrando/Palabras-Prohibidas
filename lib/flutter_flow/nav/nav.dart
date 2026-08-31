@@ -75,14 +75,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomeScreenWidget(),
         ),
         FFRoute(
-          name: PlayerSetupWidget.routeName,
-          path: PlayerSetupWidget.routePath,
-          builder: (context, params) => PlayerSetupWidget(),
+          name: PairsPlayerSetupWidget.routeName,
+          path: PairsPlayerSetupWidget.routePath,
+          builder: (context, params) => PairsPlayerSetupWidget(),
         ),
         FFRoute(
           name: WordScreenWidget.routeName,
           path: WordScreenWidget.routePath,
           builder: (context, params) => WordScreenWidget(),
+        ),
+        FFRoute(
+          name: IndividualPlayerSetupWidget.routeName,
+          path: IndividualPlayerSetupWidget.routePath,
+          builder: (context, params) => IndividualPlayerSetupWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

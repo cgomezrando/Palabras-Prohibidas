@@ -10,3 +10,6 @@ export '/custom_code/actions/mostrar_ventana_resultados.dart'
     show mostrarVentanaResultados;
 export '/custom_code/actions/mostrar_ventana_reglas.dart'
     show mostrarVentanaReglas;
+export '/custom_code/actions/mostrar_ventana_transicion_individual.dart'
+    show mostrarVentanaTransicionIndividual;
+export '/custom_code/actions/mostrar_ventana_modo.dart' show mostrarVentanaModo;

@@ -89,7 +89,7 @@ class FFAppState extends ChangeNotifier {
     _Team4Score = value;
   }
 
-  int _TotalTurns = 20;
+  int _TotalTurns = 10;
   int get TotalTurns => _TotalTurns;
   set TotalTurns(int value) {
     _TotalTurns = value;
@@ -160,7 +160,7 @@ class FFAppState extends ChangeNotifier {
     GameCards.insert(index, value);
   }
 
-  int _PreviewTime = 10;
+  int _PreviewTime = 5;
   int get PreviewTime => _PreviewTime;
   set PreviewTime(int value) {
     _PreviewTime = value;
@@ -170,5 +170,11 @@ class FFAppState extends ChangeNotifier {
   String get turnPhase => _turnPhase;
   set turnPhase(String value) {
     _turnPhase = value;
+  }
+
+  int _gameMode = 1;
+  int get gameMode => _gameMode;
+  set gameMode(int value) {
+    _gameMode = value;
   }
 }

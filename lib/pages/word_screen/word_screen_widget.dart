@@ -218,11 +218,11 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Container(
-                                width: 100.0,
+                                width: 125.0,
                                 height: 120.0,
                                 decoration: BoxDecoration(
                                   color: FFAppState().currentTeam == 1
-                                      ? Color(0xFF00E5FF)
+                                      ? Color(0x8000E5FF)
                                       : Colors.transparent,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(24.0),
@@ -251,7 +251,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
-                                          'Team  1',
+                                          FFAppState().Team1Name,
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -264,7 +264,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                           .fontStyle,
                                                 ),
                                                 color: Colors.white,
-                                                fontSize: 16.0,
+                                                fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w900,
                                                 fontStyle:
@@ -314,11 +314,11 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 0.0, 0.0),
                               child: Container(
-                                width: 100.0,
+                                width: 125.0,
                                 height: 120.0,
                                 decoration: BoxDecoration(
                                   color: FFAppState().currentTeam == 2
-                                      ? Color(0xFF00E5FF)
+                                      ? Color(0x8000E5FF)
                                       : Colors.transparent,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(24.0),
@@ -347,7 +347,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Text(
-                                          'Team  2',
+                                          FFAppState().Team2Name,
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
                                               .override(
@@ -360,7 +360,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                           .fontStyle,
                                                 ),
                                                 color: Colors.white,
-                                                fontSize: 16.0,
+                                                fontSize: 14.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w900,
                                                 fontStyle:
@@ -411,11 +411,11 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Container(
-                                  width: 100.0,
+                                  width: 125.0,
                                   height: 120.0,
                                   decoration: BoxDecoration(
                                     color: FFAppState().currentTeam == 3
-                                        ? Color(0xFF00E5FF)
+                                        ? Color(0x8000E5FF)
                                         : Colors.transparent,
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(24.0),
@@ -445,7 +445,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Text(
-                                            'Team  3',
+                                            FFAppState().Team3Name,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
@@ -458,7 +458,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                             .fontStyle,
                                                   ),
                                                   color: Colors.white,
-                                                  fontSize: 16.0,
+                                                  fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w900,
                                                   fontStyle:
@@ -511,11 +511,11 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: Container(
-                                  width: 100.0,
+                                  width: 125.0,
                                   height: 120.0,
                                   decoration: BoxDecoration(
                                     color: FFAppState().currentTeam == 4
-                                        ? Color(0xFF00E5FF)
+                                        ? Color(0x8000E5FF)
                                         : Colors.transparent,
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(24.0),
@@ -546,7 +546,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Text(
-                                            'Team  4',
+                                            FFAppState().Team4Name,
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
@@ -559,7 +559,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                                             .fontStyle,
                                                   ),
                                                   color: Colors.white,
-                                                  fontSize: 16.0,
+                                                  fontSize: 14.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w900,
                                                   fontStyle:
@@ -719,8 +719,8 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                   FFAppState().winnerName = '';
                                   safeSetState(() {});
 
-                                  context
-                                      .pushNamed(PlayerSetupWidget.routeName);
+                                  context.pushNamed(
+                                      PairsPlayerSetupWidget.routeName);
                                 },
                                 child: Container(
                                   width: 75.0,
@@ -810,10 +810,17 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                           safeSetState(() {});
                                           _model.playTimerController
                                               .onStopTimer();
-                                          await actions
-                                              .mostrarVentanaTransicion(
-                                            context,
-                                          );
+                                          if (FFAppState().gameMode == 1) {
+                                            await actions
+                                                .mostrarVentanaTransicion(
+                                              context,
+                                            );
+                                          } else {
+                                            await actions
+                                                .mostrarVentanaTransicionIndividual(
+                                              context,
+                                            );
+                                          }
                                         }
                                       },
                                       child: Material(
@@ -1318,9 +1325,17 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                         safeSetState(() {});
                                         _model.playTimerController
                                             .onStopTimer();
-                                        await actions.mostrarVentanaTransicion(
-                                          context,
-                                        );
+                                        if (FFAppState().gameMode == 1) {
+                                          await actions
+                                              .mostrarVentanaTransicion(
+                                            context,
+                                          );
+                                        } else {
+                                          await actions
+                                              .mostrarVentanaTransicionIndividual(
+                                            context,
+                                          );
+                                        }
                                       },
                                       child: Container(
                                         width: 200.0,

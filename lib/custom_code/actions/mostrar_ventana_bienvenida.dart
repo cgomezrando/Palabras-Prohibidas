@@ -117,12 +117,12 @@ Future mostrarVentanaBienvenida(BuildContext context) async {
                     regla(
                       Icons.timer_rounded,
                       amarillo,
-                      'Al inicio de cada turno tendrás 10 segundos para pensar y prepararte.',
+                      'Al inicio de cada turno tendrás 5 segundos para pensar y prepararte.',
                     ),
                     regla(
                       Icons.record_voice_over_rounded,
                       const Color(0xFF00E5FF),
-                      'Describe la PALABRA CLAVE para que tu equipo la adivine.',
+                      'Describe la PALABRA CLAVE para que tu equipo o el resto de jugadores la adivine.',
                     ),
                     regla(
                       Icons.block_rounded,
@@ -132,7 +132,7 @@ Future mostrarVentanaBienvenida(BuildContext context) async {
                     regla(
                       Icons.emoji_events_rounded,
                       amarillo,
-                      'Pulsa ACIERTO si lo adivinan o FALLO si te saltas una regla o se acaba el tiempo.',
+                      ',Pulsa ACIERTO si lo adivinan, o FALLO si te saltas una regla o se acaba el tiempo. En el modo individual, recuerda marcar quién ha adivinado la palabra para darle su punto',
                     ),
                   ],
                 ),

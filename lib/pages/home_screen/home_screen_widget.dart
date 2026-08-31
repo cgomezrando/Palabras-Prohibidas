@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import '/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -47,275 +47,173 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Container(
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              alignment: AlignmentDirectional(0.0, 1.0),
-              image: Image.asset(
-                'assets/images/Designer_(15).png',
-              ).image,
-            ),
-          ),
-          child: Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        context.pushNamed(PlayerSetupWidget.routeName);
-                      },
-                      child: Container(
-                        width: 500.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 30.0,
-                              color: Colors.white,
-                              offset: Offset(
-                                0.0,
-                                2.0,
+        body: Align(
+          alignment: AlignmentDirectional(0.0, 0.0),
+          child: Stack(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            children: [
+              if (MediaQuery.of(context).size.height <=
+                  MediaQuery.of(context).size.width)
+                Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/palabras_contain_1366x1024.png',
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              if (MediaQuery.of(context).size.height >
+                  MediaQuery.of(context).size.width)
+                Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/palabras_contain_1024x1366.png',
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              Align(
+                alignment: AlignmentDirectional(0.0, 1.0),
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 100.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await actions.mostrarVentanaModo(
+                              context,
+                            );
+                          },
+                          child: Container(
+                            width: 450.0,
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 0.0,
+                                  color: Color(0xFFB36A00),
+                                  offset: Offset(
+                                    0.0,
+                                    8.0,
+                                  ),
+                                  spreadRadius: 3.0,
+                                )
+                              ],
+                              gradient: LinearGradient(
+                                colors: [Color(0xFFFFD400), Color(0xFFFFB800)],
+                                stops: [0.0, 1.0],
+                                begin: AlignmentDirectional(0.0, -1.0),
+                                end: AlignmentDirectional(0, 1.0),
                               ),
-                            )
-                          ],
-                          gradient: LinearGradient(
-                            colors: [
-                              FlutterFlowTheme.of(context).primary,
-                              Color(0xFF005CFF)
-                            ],
-                            stops: [0.0, 1.0],
-                            begin: AlignmentDirectional(1.0, 0.0),
-                            end: AlignmentDirectional(-1.0, 0),
-                          ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(24.0),
-                            topRight: Radius.circular(24.0),
-                            bottomLeft: Radius.circular(24.0),
-                            bottomRight: Radius.circular(24.0),
-                          ),
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 3.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(24.0),
+                                topRight: Radius.circular(24.0),
+                                bottomLeft: Radius.circular(24.0),
+                                bottomRight: Radius.circular(24.0),
+                              ),
+                              border: Border.all(
+                                color: Color(0xFFFFF6B0),
+                                width: 3.0,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 10.0),
+                              child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Icon(
-                                      Icons.play_arrow_sharp,
-                                      color: Colors.white,
-                                      size: 65.0,
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Icon(
+                                          Icons.play_arrow_sharp,
+                                          color: Color(0xFF2D003F),
+                                          size: 65.0,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Align(
                                         alignment:
                                             AlignmentDirectional(-1.0, 0.0),
-                                        child: Text(
-                                          'JUGAR',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.poppins(
-                                                  fontWeight: FontWeight.w600,
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'JUGAR AHORA',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.montserrat(
+                                                    fontWeight: FontWeight.w800,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: Color(0xFF2D003F),
+                                                  fontSize: 40.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w800,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMedium
                                                           .fontStyle,
                                                 ),
-                                                color: Colors.white,
-                                                fontSize: 32.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
+                                          ),
                                         ),
-                                      ),
-                                      Text(
-                                        '¡Demuestra quien tienen más habilidad para adivinar!',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Colors.white,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
-                              Icon(
-                                Icons.keyboard_arrow_right,
-                                color: Colors.white,
-                                size: 45.0,
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                    ].divide(SizedBox(height: 32.0)),
                   ),
-                  Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                      child: Container(
-                        width: 450.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 30.0,
-                              color: Colors.white,
-                              offset: Offset(
-                                0.0,
-                                2.0,
-                              ),
-                              spreadRadius: 0.0,
-                            )
-                          ],
-                          gradient: LinearGradient(
-                            colors: [Color(0xFF22105A), Color(0xFF111044)],
-                            stops: [0.0, 1.0],
-                            begin: AlignmentDirectional(1.0, 0.0),
-                            end: AlignmentDirectional(-1.0, 0),
-                          ),
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(24.0),
-                            topRight: Radius.circular(24.0),
-                            bottomLeft: Radius.circular(24.0),
-                            bottomRight: Radius.circular(24.0),
-                          ),
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                            color: Color(0xFF6D4CFF),
-                            width: 3.0,
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Icon(
-                                    Icons.wifi_off,
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    size: 50.0,
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10.0, 0.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 375.0,
-                                    height: 75.0,
-                                    decoration: BoxDecoration(),
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 10.0, 0.0),
-                                      child: Text(
-                                        '100% Offline • Cientos de palabras divertidisimas para adivinar en familia o con amig@s!!',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              color: Colors.white,
-                                              fontSize: 15.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ].divide(SizedBox(height: 32.0)),
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),

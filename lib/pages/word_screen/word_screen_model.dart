@@ -31,10 +31,10 @@ class WordScreenModel extends FlutterFlowModel<WordScreenWidget> {
 
   AudioPlayer? soundPlayer1;
   // State field(s) for PreviewTimer widget.
-  final previewTimerInitialTimeMs = 10000;
-  int previewTimerMilliseconds = 10000;
+  final previewTimerInitialTimeMs = 5000;
+  int previewTimerMilliseconds = 5000;
   String previewTimerValue = StopWatchTimer.getDisplayTime(
-    10000,
+    5000,
     hours: false,
     milliSecond: false,
   );
