@@ -236,7 +236,7 @@ class _PairsPlayerSetupWidgetState extends State<PairsPlayerSetupWidget> {
                                                     safeSetState(() {});
 
                                                     context.pushNamed(
-                                                        PairsPlayerSetupWidget
+                                                        HomeScreenWidget
                                                             .routeName);
                                                   },
                                                   child: Container(

@@ -719,8 +719,7 @@ class _WordScreenWidgetState extends State<WordScreenWidget> {
                                   FFAppState().winnerName = '';
                                   safeSetState(() {});
 
-                                  context.pushNamed(
-                                      PairsPlayerSetupWidget.routeName);
+                                  context.pushNamed(HomeScreenWidget.routeName);
                                 },
                                 child: Container(
                                   width: 75.0,

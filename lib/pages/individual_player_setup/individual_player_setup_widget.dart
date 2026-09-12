@@ -238,7 +238,7 @@ class _IndividualPlayerSetupWidgetState
                                                     safeSetState(() {});
 
                                                     context.pushNamed(
-                                                        PairsPlayerSetupWidget
+                                                        HomeScreenWidget
                                                             .routeName);
                                                   },
                                                   child: Container(
