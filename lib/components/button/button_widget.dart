@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'button_model.dart';
 export 'button_model.dart';
@@ -300,46 +299,6 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                   ].divide(SizedBox(width: 8.0)),
                 ),
               ),
-            ),
-            CircularPercentIndicator(
-              percent: 0.0,
-              radius: 7.0,
-              lineWidth: 2.0,
-              animation: true,
-              animateFromLastPercent: true,
-              progressColor: valueOrDefault<Color>(
-                () {
-                  if (valueOrDefault<String>(
-                        widget!.variant,
-                        'primary',
-                      ) ==
-                      'secondary') {
-                    return FlutterFlowTheme.of(context).onSecondary;
-                  } else if (valueOrDefault<String>(
-                        widget!.variant,
-                        'primary',
-                      ) ==
-                      'outline') {
-                    return FlutterFlowTheme.of(context).primaryText;
-                  } else if (valueOrDefault<String>(
-                        widget!.variant,
-                        'primary',
-                      ) ==
-                      'ghost') {
-                    return FlutterFlowTheme.of(context).primary;
-                  } else if (valueOrDefault<String>(
-                        widget!.variant,
-                        'primary',
-                      ) ==
-                      'destructive') {
-                    return FlutterFlowTheme.of(context).onError;
-                  } else {
-                    return FlutterFlowTheme.of(context).onPrimary;
-                  }
-                }(),
-                FlutterFlowTheme.of(context).onPrimary,
-              ),
-              backgroundColor: FlutterFlowTheme.of(context).alternate,
             ),
           ],
         ),

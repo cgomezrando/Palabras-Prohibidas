@@ -171,39 +171,94 @@ class _PairsPlayerSetupWidgetState extends State<PairsPlayerSetupWidget> {
                                               ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 10.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await actions
-                                                    .mostrarVentanaReglas(
-                                                  context,
-                                                );
-                                              },
-                                              child: Container(
-                                                width: 60.0,
-                                                height: 60.0,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                    color: Color(0xFF6D4CFF),
-                                                    width: 2.0,
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await actions
+                                                      .mostrarVentanaReglas(
+                                                    context,
+                                                  );
+                                                },
+                                                child: Container(
+                                                  width: 60.0,
+                                                  height: 60.0,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                      color: Color(0xFF6D4CFF),
+                                                      width: 2.0,
+                                                    ),
+                                                  ),
+                                                  child: Icon(
+                                                    Icons.question_mark_sharp,
+                                                    color: Colors.white,
+                                                    size: 50.0,
                                                   ),
                                                 ),
-                                                child: Icon(
-                                                  Icons.question_mark_sharp,
-                                                  color: Colors.white,
-                                                  size: 50.0,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        10.0, 0.0, 10.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    FFAppState()
+                                                        .currentCardIndex = 0;
+                                                    FFAppState().currentTeam =
+                                                        1;
+                                                    FFAppState().Team1Score = 0;
+                                                    FFAppState().Team2Score = 0;
+                                                    FFAppState().Team3Score = 0;
+                                                    FFAppState().Team4Score = 0;
+                                                    FFAppState().CurrentTurn =
+                                                        1;
+                                                    FFAppState().CardAnswered =
+                                                        false;
+                                                    FFAppState().GameFinished =
+                                                        false;
+                                                    FFAppState().winnerName =
+                                                        '';
+                                                    safeSetState(() {});
+
+                                                    context.pushNamed(
+                                                        PairsPlayerSetupWidget
+                                                            .routeName);
+                                                  },
+                                                  child: Container(
+                                                    width: 60.0,
+                                                    height: 60.0,
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      border: Border.all(
+                                                        color:
+                                                            Color(0xFF6D4CFF),
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Icon(
+                                                      Icons.home_rounded,
+                                                      color: Colors.white,
+                                                      size: 50.0,
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
-                                            ),
+                                            ],
                                           ),
                                         ],
                                       ),
